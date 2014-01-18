@@ -2,6 +2,8 @@
 
 A Clean Solution for Templating with [Twig](twig.sensiolabs.org)
 
+[![Build Status](https://travis-ci.org/Kristories/Templator.png)](https://travis-ci.org/Kristories/Templator)
+
 ## Installation
 
 Add the following into your `composer.json` file:
