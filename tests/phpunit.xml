@@ -1,0 +1,23 @@
+<phpunit bootstrap="./bootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    stopOnFailure="false"
+    syntaxCheck="true" >
+    <testsuite name="Templator Test Suite">
+        <directory>.</directory>
+    </testsuite>
+    <filter>
+        <blacklist>
+            <directory suffix=".php">../</directory>
+        </blacklist>
+        <whitelist>
+            <directory suffix=".php">../src/templator</directory>
+            <exclude>
+                <directory suffix=".phtml">../</directory>
+                <file>./bootstrap.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
