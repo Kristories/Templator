@@ -1,0 +1,32 @@
+{
+    "name": "kristories/templator",
+    "description": "A Template Management for Twig",
+    "version": "0.0.1",
+    "homepage": "https://github.com/Kristories/Templator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wahyu Kristianto",
+            "email": "w.kristories@gmail.com",
+            "homepage": "http://wahyukristianto.com",
+            "role": "Developer"
+        }
+    ],
+    "keywords": [
+        "template",
+        "management",
+        "twig"
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "twig/twig": "1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Templator": "src/"
+        }
+    }
+}
