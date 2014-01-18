@@ -1,6 +1,6 @@
 {
     "name": "kristories/templator",
-    "description": "A Template Management for Twig",
+    "description": "A Clean Solution for Templating with Twig",
     "version": "0.0.1",
     "homepage": "https://github.com/Kristories/Templator",
     "license": "MIT",
