@@ -14,7 +14,7 @@ class Templator {
      * Configuration
      * @var array
      */
-    protected $_config = array(
+    public $_config = array(
         'path'  => array(
             'root'      => 'templates',
             'base'      => 'base',
@@ -28,19 +28,13 @@ class Templator {
      * Data
      * @var array
      */
-    protected $_data    = array();
-
-    /**
-     * Default base template
-     * @var string
-     */
-    protected $_base    = 'default';
+    public $_data    = array();
 
     /**
      * Widgets
      * @var array
      */
-    protected $_widgets = array();
+    public $_widgets = array();
 
 
     /**
