@@ -1,14 +1,18 @@
 # Templator
-### An awesome [Twig](twig.sensiolabs.org) wrapper to control your layout like a boss!
+## An awesome [Twig](twig.sensiolabs.org) wrapper to control your layout like a boss!
 
 [![Build Status](https://travis-ci.org/Kristories/Templator.png)](https://travis-ci.org/Kristories/Templator)
 
+## What Templator can do for you?
+- Gives freedom to the template designer to design & create layout's widgets as many as they want without worrying how the developers consume and arrange the layout later
+- Gives the developer a simple way to consume and adjust layouts that provided by the template designer
 - Focus on position
-- Widget can be displayed in all the positions a template
+- Widget can be displayed in all the positions of a template
 
 ---
 
-## You are template designer
+# The Concept
+### You are template designer
 
 ![1](assets/1.png)
    
@@ -28,14 +32,14 @@
     
 ---
 
-## You are developer
+### You are developer
+As a developer you can control the layout easily looks like below:
 
     $templator->widgets(array(
-        'position' => array('widget')
+        'block' => array('widget')
     ));
 
-
-### Setting widget position
+#### Let see the big picture of the concept below
 
 ![2](assets/2.png)
 
