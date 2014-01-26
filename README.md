@@ -1,8 +1,7 @@
 # Templator
+### An awesome [Twig](twig.sensiolabs.org) wrapper to control your layout like a boss!
 
 [![Build Status](https://travis-ci.org/Kristories/Templator.png)](https://travis-ci.org/Kristories/Templator)
-
-An awesome [Twig](twig.sensiolabs.org) wrapper to control your layout like a boss!
 
 - Focus on position
 - Widget can be displayed in all the positions a template
