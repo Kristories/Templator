@@ -85,7 +85,7 @@ class Templator {
      * @param  array  $widgets
      * @return \Templator\Templator
      */
-    public function widgets($widgets = array())
+    public function blocks($widgets = array())
     {
         // Check
         if($widgets AND is_array($widgets))
