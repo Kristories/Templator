@@ -178,6 +178,10 @@ $templator->blocks(array(
 $templator->render('base_template', 'page');
 ```
 
+## Example
+
+[templator-bootstrap](https://github.com/Kristories/templator-bootstrap)
+
 ---
 
 ## Why Twig?
