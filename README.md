@@ -4,15 +4,15 @@
 [![Build Status](https://travis-ci.org/Kristories/Templator.png)](https://travis-ci.org/Kristories/Templator)
 
 ## What Templator can do for you?
-- Gives freedom to the template designer to design & create layout's widgets as many as they want without worrying how the developers consume and arrange the layout later
-- Gives the developer a simple way to consume and adjust layouts that provided by the template designer
+
 - Focus on position
 - Widget can be displayed in all the positions of a template
+- This will help reduce redundancy and keep you from writing too much code
 
----
 
-# The Concept
-### You are template designer
+## If you are template designer
+
+The template designer has complete control over block positions.
 
 ![1](assets/1.png)
    
@@ -30,120 +30,155 @@
     </body>
     </html>
     
----
+## If you are developer
 
-### You are developer
-As a developer you can control the layout easily looks like below:
+Developer has complete control widgets you want to appear in block positions.
 
-    $templator->widgets(array(
-        'block' => array('widget')
-    ));
+```php
+$templator->blocks(array(
+    'position' => array('widget')
+));
+```
 
-#### Let see the big picture of the concept below
+#### Let see how it goes
 
 ![2](assets/2.png)
 
-    $templator->widgets(array(
-        'header'    => array('widget_a'),
-        'left'      => array('widget_b'),
-        'right'     => array('widget_c'),
-        'footer'    => array('widget_d')
-    ));
+```php
+$templator->blocks(array(
+    'header'    => array('widget_a'),
+    'left'      => array('widget_b'),
+    'right'     => array('widget_c'),
+    'footer'    => array('widget_d')
+));
+```
 
 ---
 
 ![3](assets/3.png)
 
-    $templator->widgets(array(
-        'header'    => array('widget_a'),
-        'right'     => array('widget_c'),
-        'footer'    => array('widget_d')
-    ));
+```php
+$templator->blocks(array(
+    'header'    => array('widget_a'),
+    'right'     => array('widget_c'),
+    'footer'    => array('widget_d')
+));
+```
 
 ---
 
 ![4](assets/4.png)
 
-    $templator->widgets(array(
-        'header'    => array('widget_a'),
-        'right'     => array('widget_b', 'widget_c', 'widget_e', 'widget_f'),
-        'footer'    => array('widget_d')
-    ));
+```php
+$templator->blocks(array(
+    'header'    => array('widget_a'),
+    'right'     => array('widget_b', 'widget_c', 'widget_e', 'widget_f'),
+    'footer'    => array('widget_d')
+));
+```
 
 
 ## Installation
 
 Add the following into your `composer.json` file:
 
-    {
-        "require": {
-            "kristories/templator": "*"
-        }
+```json
+{
+    "require": {
+        "kristories/templator": "*"
     }
+}
+```
 
 Then run
 
-    composer install
+```
+composer install
+```
 
 
 ## Usage
 
 ### Basic
 
-    $templator = new \Templator\Templator();
+```php
+$templator = new \Templator\Templator();
 
-    // Set data
-    $templator->data('foo', 'bar');
+// Set data
+$templator->data('foo', 'bar');
 
-    // Render
-    echo $templator->render('base_template', 'page');
+// Set widgets
+$templator->blocks(array(
+    'header' => array('logo', 'search')
+));
+
+// Render
+// base_template    => /templates/base/base_template.html
+// page             => /templates/pages/page.html
+echo $templator->render('base_template', 'page');
+```
 
 ### Config
 
-    $templator = new \Templator\Templator(array(
-        'path'  => array(
-            'root'      => 'templates',
-            'base'      => 'base',
-            'pages'     => 'pages',
-            'widgets'   => 'widgets'
-        ),
-        'cache' => NULL
-    ));
+```php
+$templator = new \Templator\Templator(array(
+    'path'  => array(
+        'root'      => 'templates',
+        'base'      => 'base',
+        'pages'     => 'pages',
+        'widgets'   => 'widgets'
+    ),
+    'cache' => NULL
+));
+```
 
 Structure :
 
-    ├── templates/
-    |   ├── base/
-    |   |   └── base_template.html
-    |   ├── pages/
-    |   |   ├── home.html
-    |   |   ├── about.html
-    |   |   ├── contact.html
-    |   |   └── ...
-    |   └── widgets/
-    |   |   ├── logo.html
-    |   |   ├── menu.html
-    |   |   ├── tags.html
-    |   |   ├── search.html    
-    |   |   └── ...
-    └── cache
+```
+├── templates/
+|   ├── base/
+|   |   └── base_template.html
+|   ├── pages/
+|   |   ├── home.html
+|   |   ├── about.html
+|   |   ├── contact.html
+|   |   └── ...
+|   └── widgets/
+|   |   ├── logo.html
+|   |   ├── menu.html
+|   |   ├── tags.html
+|   |   ├── search.html    
+|   |   └── ...
+└── cache/
+```
 
 ### Data
 
-    $templator->data('foo', 'bar');
-    // or
-    $templator->data(array(
-        'foo' => 'bar',
-        'bar' => 'baz'
-    ));
+```php
+$templator->data('foo', 'bar');
+// or
+$templator->data(array(
+    'foo' => 'bar',
+    'bar' => 'baz'
+));
+```
 
 ### Widgets
 
-    $templator->widgets(array(
-        'header' => array('logo', 'mainmenu', 'search'),
-        'footer' => array('copyright, 'footermenu')
-    ));
+```php
+$templator->blocks(array(
+    'header' => array('logo', 'mainmenu', 'search'),
+    'footer' => array('copyright, 'footermenu')
+));
+```
 
+### Render
+
+```php
+$templator->render('base_template', 'page');
+```
+
+---
 
 ## Why Twig?
 
